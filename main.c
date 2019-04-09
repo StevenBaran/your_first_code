@@ -1,9 +1,13 @@
-int main()
-{
-  int i;
-  for (i = 0; i < 32; i++)
-  {
-    printf("Hello Holberton\n");
-  }
-  return 0;
-}
+$(document).ready(function() {
+    $("#password").on("submit",
+        function(e) {
+            e.preventDefault();
+            $.getJSON("/password").done(
+                function (response) {
+                    var result = response;
+                    
+                    $("h3").text(result);
+                });
+        });
+});
+
